@@ -1,0 +1,31 @@
+apnuft (Access Point Name Utility For Test) 
+
+apnuft is a standalone android application, the main work horse behind apnuft is a service which receives IPC (inter process communication) messages from a client (test project) with instructions to enable and disable connectivity.
+
+apnuft functions as a standalone application so it is as unobtrusive as possible on the test project and application under tests, 
+       
+No permissions or application components need to be added to the test project or application under test
+
+Instructions for use:
+
+- Import the project into your eclipse workspace or install apk file 
+
+- Include this code to switch connectivity on 
+
+mContext.bindService(new Intent(
+            "org.whatsthebeef.android.apntu.action.NETWORK_MANAGEMENT_INTERACTION_INTENT"),
+        mConnection, Context.BIND_AUTO_CREATE);
+Message message = Message.obtain(null, 3, 4, 0);
+mService.send(message);
+
+
+- Include this code to switch connectivity off 
+
+mContext.bindService(new Intent(
+                "org.whatsthebeef.android.apntu.action.NETWORK_MANAGEMENT_INTERACTION_INTENT"),
+                mConnection, Context.BIND_AUTO_CREATE);
+        Message message = Message.obtain(null, 3, 5, 0);
+        mService.send(message);
+
+See javadocs for more detail description
+

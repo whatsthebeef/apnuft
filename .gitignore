@@ -1,0 +1,10 @@
+bin
+gen
+bin/*
+gen/*
+*.swp
+tests/bin/*
+tests/gen/*
+.settings/*
+.DS_Store
+test/.DS_Store

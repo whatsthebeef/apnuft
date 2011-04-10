@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="org.whatsthebeef.android.apntu" android:versionCode="1"
+	android:enabled="true" android:versionName="1.0">
+	<uses-permission android:name="android.permission.WRITE_APN_SETTINGS" />
+	<uses-sdk android:minSdkVersion="4" android:targetSdkVersion="9" />
+	<application android:debuggable="true">
+		<service android:name="NetworkManagementService">
+			<intent-filter>
+				<action
+					android:name="org.whatsthebeef.android.apntu.action.NETWORK_MANAGEMENT_INTERACTION_INTENT" />
+			</intent-filter>
+		</service>
+	</application>
+</manifest>
